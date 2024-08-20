@@ -1,0 +1,77 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background: url('D:\Jawwad\Invitation\invite.jpeg') no-repeat center center fixed; 
+    background-size: cover;
+    overflow: hidden;
+}
+
+.invitation-container {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+/* Roses and Petals */
+.rose-petals-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.rose, .petal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('small-rose.webp'); /* Replace with rose image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fall 10s infinite ease-in-out;
+}
+
+/* Different positions for petals */
+.petal-1 { left: 10%; animation-delay: 0s; }
+.petal-2 { left: 30%; animation-delay: 2s; }
+.petal-3 { left: 50%; animation-delay: 4s; }
+.petal-4 { left: 70%; animation-delay: 6s; }
+
+@keyframes fall {
+    0% {
+        top: -100px;
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        opacity: 0.8;
+        transform: translateX(200px) rotate(720deg);
+    }
+}
+
+.rose {
+    width: 100px;
+    height: 100px;
+    background-image: url('large-rose.avif'); /* Replace with larger rose image */
+    animation: roseFall 8s infinite ease-in-out;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+@keyframes roseFall {
+    0% {
+        top: -150px;
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        opacity: 0.9;
+        transform: translateX(-200px) rotate(-360deg);
+    }
+}
